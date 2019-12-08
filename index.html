@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"
+          integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <title>Weather</title>
+</head>
+<body>
+
+
+<div class="container" id="mainDiv">
+    <h1>Weather In The City</h1>
+    <div class="form-group">
+        <input class="form-control" id="cityInput" name="city" aria-describedby="Forecast city"
+               placeholder="Enter city name">
+    </div>
+    <button onclick="findCity()" class="btn btn-primary">Search</button>
+    <div class="card mb-3 hidden"  id="weather">
+        <div class="row no-gutters">
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 id="location" class="card-title"></h5>
+                    <p class="card-text" id="description"></p>
+
+                </div>
+            </div>
+            <div class="col-md-4">
+                <img id="weatherImage"/>
+                <h2 id="temp"></h2>
+            </div>
+        </div>
+    </div>
+    <div class="alert alert-danger hidden" role="alert" id="errorAlert">
+        Please enter valid city name!
+    </div>
+</div>
+<script src="script/weather.js" type="text/javascript">
+</script>
+</body>
+</html>

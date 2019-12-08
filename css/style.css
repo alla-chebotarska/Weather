@@ -1,0 +1,34 @@
+html {
+    background: url(../images/website-background.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+body {
+    background: none;
+}
+
+#mainDiv {
+    text-align: center;
+    margin-top: 10%;
+    width: 35%;
+}
+
+#city {
+    margin: 50px 0;
+}
+
+#weather, #errorAlert{
+    margin-top: 15px;
+}
+
+#weatherImage{
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+.hidden{
+    display: none;
+}
