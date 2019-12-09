@@ -13,7 +13,7 @@ body {
 #mainDiv {
     text-align: center;
     margin-top: 10%;
-    width: 35%;
+    width: 50%;
 }
 
 #city {
@@ -32,3 +32,39 @@ body {
 .hidden{
     display: none;
 }
+
+ .h3,
+ h3 {
+     font-size: 1.56rem
+ }
+
+ .h1,
+ .h2,
+ .h3,
+ .h4,
+ .h5,
+ .h6,
+ p,
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6 {
+     font-family: "Poppins", sans-serif;
+     font-weight: 500
+ }
+
+.card-header{
+    text-align: left;
+}
+
+#weatherDetails{
+    text-align: left;
+}
+
+p{
+    margin: 0px;
+}
+
+
