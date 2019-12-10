@@ -5,6 +5,7 @@ let BASE_URL = 'https://api.openweathermap.org/data/2.5/forecast?q=' + CITY_PLAC
 
 function getWeatherForCity(city) {
     let url = BASE_URL.replace(CITY_PLACEHOLDER, city);
+    console.log(url);
     let xmlHttp = new XMLHttpRequest();
     xmlHttp.open("GET", url, false); // false for synchronous request
     xmlHttp.send();
