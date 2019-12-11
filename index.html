@@ -20,62 +20,77 @@
 
 
 <div class="container" id="mainDiv">
-    <h1>Weather In The City</h1>
-    <div class="form-group">
-        <input class="form-control" id="cityInput" onfocus="this.value=''" name="city" aria-describedby="Forecast city"
-               placeholder="Enter city name">
-    </div>
-    <button onclick="findCity()" class="btn btn-primary" id="findCityBtn">Search</button>
+    <h1 class="mt-3">Weather In The City</h1>
+	<div class="row">
+		<div class="col-md-6 offset-md-3">
+			<div class="input-group mb-3 px-5">
+				<input class="form-control" id="cityInput" onfocus="this.value=''" name="city" aria-describedby="Forecast city"
+					   placeholder="Enter city name">
+				<div class="input-group-append">
+					<button id="findCityBtn" onclick="findCity()" class="btn btn-outline-secondary" type="button">Search</button>
+				</div>
+			</div>
+		</div>
+	</div>
     <div class="card hidden"  id="weather">
-        <div class="card-header">
-            <h5 id="location" class="card-title"></h5>
-            <h6 class="card-subtitle mb-2 text-muted" id="description"></h6>
+        <div class="card-header d-inline-flex">
+            <span id="location"></span>
+            <span id="description" class="text-muted pl-2"></span>
         </div> 
 		<div class="card-body">
 			<div class="row">
 				<div class="col-3">
-					<img id="weatherImage" />
+					<img id="weatherImage" class="img-fluid"/>
 				</div>
 				<div class="mx-auto col-3">
 					<h2 id="temp"></h2>
 				</div>
-				<div class="col-6" id="weatherDetails">
+				<div class="col-6 my-3" id="weatherDetails">
 					<p id="humidity"></p>
 					<p id="windSpeed"></p>
 				</div>
 			</div>
-			<br>
-			<br>
+			<hr>
 			<div class="row draw" >
 				<div class="col">
 					<h6 class="card-title day-of-week"></h6>
-				    <img src="images/weatherImg/01n.svg" class="card-img-top">
-				    <p class="card-text max-temp"></p>
-				    <p class="card-text min-temp"></p>
+				    <img class="card-img-top weatherForecastImg">
+				    <div class="d-inline-flex">
+  						<div class="p-2 card-text max-temp"></div>
+  						<div class="p-2 text-secondary card-text min-temp"></div>
+					</div>
 				</div>
 				<div class="col">
 					<h6 class="card-title day-of-week"></h6>
-				    <img src="images/weatherImg/01n.svg" class="card-img-top">
-				    <p class="card-text max-temp">2 C</p>
-				    <p class="card-text min-temp">2 C</p>
+				    <img class="card-img-top weatherForecastImg">
+				    <div class="d-inline-flex">
+  						<div class="p-2 card-text max-temp"></div>
+  						<div class="p-2 text-secondary card-text min-temp"></div>
+					</div>
 				</div>
 				<div class="col">
 					<h6 class="card-title day-of-week"></h6>
-				    <img src="images/weatherImg/01n.svg" class="card-img-top">
-				    <p class="card-text max-temp">2 C</p>
-				    <p class="card-text min-temp">2 C</p>
+				    <img class="card-img-top weatherForecastImg">
+				    <div class="d-inline-flex ">
+  						<div class="p-2 card-text max-temp"></div>
+  						<div class="p-2 text-secondary card-text min-temp"></div>
+					</div>
 				</div>
 				<div class="col">
 					<h6 class="card-title day-of-week"></h6>
-				    <img src="images/weatherImg/01n.svg" class="card-img-top">
-				    <p class="card-text max-temp">2 C</p>
-				    <p class="card-text min-temp">2 C</p>
+				    <img class="card-img-top weatherForecastImg">
+				    <div class="d-inline-flex">
+  						<div class="p-2 card-text max-temp"></div>
+  						<div class="p-2 text-secondary card-text min-temp"></div>
+					</div>
 				</div>
 				<div class="col">
 					<h6 class="card-title day-of-week"></h6>
-				    <img src="images/weatherImg/01n.svg" class="card-img-top">
-				    <p class="card-text max-temp">2 C</p>
-				    <p class="card-text min-temp">2 C</p>
+				    <img class="card-img-top weatherForecastImg">
+				    <div class="d-inline-flex">
+  						<div class="p-2 card-text max-temp"></div>
+  						<div class="p-2 text-secondary card-text min-temp"></div>
+					</div>
 				</div>
 
 
