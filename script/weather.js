@@ -23,11 +23,11 @@ function showCurrentWeather(weatherObject) {
     document.getElementById('temp').innerHTML = temp + ' &deg;C';
     let city = weatherObject.city.name;
     document.getElementById('location').innerText = city;
-    showWeatherImage(weatherObject.list[0].weather[0].icon);
+    showTodayImage(weatherObject.list[0].weather[0].icon);
     let humidity = weatherObject.list[0].main.humidity;
     document.getElementById('humidity').innerText = 'Humidity: ' + humidity + ' %';
     let windSpeed = weatherObject.list[0].wind.speed;
-    document.getElementById('windSpeed').innerText = 'Wing speed: ' + windSpeed + ' m/c';
+    document.getElementById('windSpeed').innerText = 'Wind speed: ' + windSpeed + ' m/s';
 }
 
 function showWeekForecast(weatherObject) {
@@ -39,7 +39,7 @@ function showWeekForecast(weatherObject) {
 function showDayForecast(dayData, index) {
     showWeekDay(dayData, index);
     showDayTemp(dayData, index);
-    // showDayImage(dayData);
+    showDayImage(dayData, index);
 
 }
 
@@ -60,8 +60,6 @@ function showWeekDay(dayData, index) {
 function showDayTemp(dayData, index) {
     let maxTemp, minTemp;
     maxTemp = minTemp = dayData[0].main.temp;
-
-    console.log("maxtemp", maxTemp);
     for (var i = 1; i < dayData.length; i++) {
         if (dayData[i].main.temp > maxTemp) {
             maxTemp = dayData[i].main.temp;
@@ -70,10 +68,32 @@ function showDayTemp(dayData, index) {
             minTemp = dayData[i].main.temp;
         }
     }
+    document.getElementsByClassName('max-temp')[index].innerText = Math.round(maxTemp) + String.fromCharCode(176);
+    document.getElementsByClassName('min-temp')[index].innerText = Math.round(minTemp) + String.fromCharCode(176);
 
-    document.getElementsByClassName('max-temp')[index].innerText = Math.round(maxTemp);
-    document.getElementsByClassName('min-temp')[index].innerText = Math.round(minTemp);
+}
 
+function getImageSrc(weatherImageId) {
+    let ImageForShow;
+    if (weatherImageId.startsWith('01') || weatherImageId.startsWith('02')) {
+        ImageForShow = weatherImageId;
+    } else {
+        ImageForShow = weatherImageId.substr(0, 2);
+    }
+    return 'images/weatherImg/' + ImageForShow + '.svg';
+}
+
+function showDayImage(dayData, index){
+    console.log("dayData: ", dayData, "Index: ", index);
+    if (index === 0) {
+        let weatherImageId = dayData[0].weather[0].icon;
+        document.getElementsByClassName('weatherForecastImg')[0].src = getImageSrc(weatherImageId);
+     }else {
+        for(var i = 0; i < dayData.length; i++){
+            let weatherImageId = dayData[4].weather[0].icon;
+            document.getElementsByClassName('weatherForecastImg')[index].src = getImageSrc(weatherImageId);
+        }
+    }
 }
 
 function groupByDays(weatherList) {
@@ -99,15 +119,8 @@ function extractDate(value) {
     return value.dt_txt.substr(0, 10);
 }
 
-function showWeatherImage(imageId) {
-    let ImageForShow;
-    if (imageId.startsWith('01') || imageId.startsWith('02')) {
-        ImageForShow = imageId;
-    } else {
-        ImageForShow = imageId.substr(0, 2);
-    }
-    let imgSrc = 'images/weatherImg/' + ImageForShow + '.svg';
-    document.getElementById('weatherImage').src = imgSrc;
+function showTodayImage(imageId) {
+    document.getElementById('weatherImage').src = getImageSrc(imageId);
 }
 
 

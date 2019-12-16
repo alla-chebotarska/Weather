@@ -1,5 +1,5 @@
 html {
-    background: url(../images/website-background.jpg) no-repeat center center fixed;
+
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -7,64 +7,75 @@ html {
 }
 
 body {
-    background: none;
-}
-
-#mainDiv {
+    background-color: #DEE9FC;
+    color: #091834;
     text-align: center;
-    margin-top: 10%;
-    width: 50%;
 }
 
-#city {
-    margin: 50px 0;
-}
-
-#weather, #errorAlert{
+#weather, #errorAlert {
     margin-top: 15px;
 }
 
-#weatherImage{
+#weatherImage {
     display: block;
     margin-left: auto;
     margin-right: auto
 }
-.hidden{
+
+.hidden {
     display: none;
 }
 
- .h3,
- h3 {
-     font-size: 1.56rem
- }
-
- .h1,
- .h2,
- .h3,
- .h4,
- .h5,
- .h6,
- p,
- h1,
- h2,
- h3,
- h4,
- h5,
- h6 {
-     font-family: "Poppins", sans-serif;
-     font-weight: 500
- }
-
-.card-header{
-    text-align: left;
+.h3,
+h3 {
+    font-size: 1.56rem
 }
 
-#weatherDetails{
-    text-align: left;
+* {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500
 }
 
-p{
+.card-header {
+    text-align: left;
+    color: #091834;
+}
+
+#description {
+    padding-bottom: 0px;
+}
+
+p {
     margin: 0px;
 }
 
+.max {
+    text-align: right;
+}
 
+.min {
+    text-align: left;
+}
+
+#location {
+    font-size: 1.56rem;
+}
+
+
+.align-vertical-center {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.day-of-week {
+    font-weight: bold;
+    color: #091834;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .day-of-week {
+        margin-top: 25px;
+        margin-bottom: 0px;
+    }
+}
